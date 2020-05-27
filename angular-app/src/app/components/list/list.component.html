@@ -1,12 +1,1 @@
-<ul>
-    <li (click)="onClickListEl($event)" *ngFor="let item of list">
-        <span [ngClass]="{'completed': item.completed}" >
-            {{ item.id }} - {{ item.title  }}
-        </span>
 
-    </li>
-</ul>
-
-<h2>{{ customDate | date:"MM/dd/yy"  }}</h2>
-
-<input [(ngModel)]="testInput" type="text">

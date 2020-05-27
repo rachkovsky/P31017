@@ -1,5 +1,27 @@
-<app-header></app-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-12">
+            <app-header></app-header>
+        </div>
+        <div class="col col-12">
+            <div class="row">
+                <div class="col col-3">
+                    <app-sidebar></app-sidebar>
+                </div>
+                <div class="col col-9">
+                    <router-outlet></router-outlet>
+                    <!-- <app-list [list]="frameworkList"></app-list> -->
+                </div>
+            </div>
+            
+        </div>
+        <div class="col col-12">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>
 
-<app-list [list]="frameworkList"></app-list>
 
-<app-footer></app-footer>
+
+
+

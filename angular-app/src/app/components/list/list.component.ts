@@ -27,10 +27,7 @@ export class ListComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.ds.getTodos().subscribe((res) => {
-      this.list = res;
-      console.log(res);
-    })
+
   }
 
 }

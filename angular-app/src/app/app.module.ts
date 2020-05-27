@@ -9,6 +9,9 @@ import { ListComponent } from './components/list/list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RedDirective } from './directives/red.directive';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { BlogListComponent } from './components/blog-list/blog-list.component';
+import { BlogItemComponent } from './components/blog-item/blog-item.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { RedDirective } from './directives/red.directive';
     ListComponent,
     HeaderComponent,
     FooterComponent,
-    RedDirective
+    RedDirective,
+    SidebarComponent,
+    BlogListComponent,
+    BlogItemComponent
   ],
   imports: [
     BrowserModule,

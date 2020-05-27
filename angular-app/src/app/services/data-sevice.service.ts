@@ -8,8 +8,11 @@ export class DataSeviceService {
 
   constructor(private http: HttpClient) { }
 
-  public ololo: string = "Abc";
-  getTodos() {
-    return this.http.get('https://jsonplaceholder.typicode.com/todos');
+  getBlogList() {
+    return this.http.get('/api/blog-list');
+  }
+
+  getBlogItemById(id) {
+    return this.http.get(`/api/blog-list/${id}`);
   }
 }

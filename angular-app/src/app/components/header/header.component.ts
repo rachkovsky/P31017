@@ -13,7 +13,6 @@ export class HeaderComponent implements OnInit {
   text: string = '';
 
   ngOnInit(): void {
-    this.text = this.ds.ololo;
   }
 
 }
