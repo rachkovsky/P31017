@@ -25,6 +25,15 @@ const list = [{
     content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod laudantium ducimus deleniti, quam nesciunt corporis iusto optio magnam velit voluptatum?'
 }];
 
+const userList = [
+    {
+        username: 'user',
+        password: '12345678',
+        userStatus: 'user'
+    }
+]
+
+
 app.get('/api/blog-list', function(req, res){
     // request to db ...
     setTimeout(() => {
@@ -40,7 +49,20 @@ app.get('/api/blog-list/:id', function(req, res){
 });
 
 
-
+app.post('/api/login', function(req, res){
+    let params = req.body;
+    console.log('--- ', params);
+    let result = userList.filter((user) => {
+        return user.username === params.username && user.password === params.password;
+    })
+    if (result.length > 0) {
+        console.log(result)
+        res.status(200).send({ message: 'OK', userStatus: result[0].userStatus });
+    } else {
+        res.status(400).send({message: 'Auth failed'})
+    }
+    
+});
 
 
 

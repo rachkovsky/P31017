@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label>
+            USERNAME:
+            <input type="text" formControlName="username">
+        </label>
+    </div>
+    <div class="text-danger" *ngIf="loginForm.touched && loginForm.controls.username.errors?.required">
+        USERNAME is required.
+    </div>
+
+    <div>
+        <label>
+            PASSWORD:
+            <input type="password" formControlName="password">
+        </label>
+    </div>
+    <div class="text-danger" *ngIf="loginForm.touched && loginForm.controls.password.errors?.required">
+        PASSWORD is required.
+    </div>
+    <div class="text-danger" *ngIf="loginForm.touched &&loginForm.controls.password.errors?.minlength">
+        Min lenght is 8 characters.
+    </div>
+    <div>
+        <button [disabled]="!loginForm.valid" class="btn btn-primary" type="submit">login</button>
+    </div>
+
+</form>

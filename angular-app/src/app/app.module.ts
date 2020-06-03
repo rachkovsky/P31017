@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }  from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BlogListComponent } from './components/blog-list/blog-list.component';
 import { BlogItemComponent } from './components/blog-item/blog-item.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import { PreloaderComponent } from './components/preloader/preloader.component';
     SidebarComponent,
     BlogListComponent,
     BlogItemComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

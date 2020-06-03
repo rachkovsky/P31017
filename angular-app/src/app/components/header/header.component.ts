@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataSeviceService } from '../../services/data-sevice.service';
+import { UserService } from '../../services/user/user.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,23 @@ import { DataSeviceService } from '../../services/data-sevice.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private ds: DataSeviceService) { }
+  constructor(private userSerivice: UserService, private authService: AuthService) { }
 
   text: string = '';
 
+  isLogined = false;
+
   ngOnInit(): void {
+    this.userSerivice.userStatus.subscribe((status) => {
+      console.log(status);
+      if (status !== 'guest') {
+        this.isLogined = true;
+      }
+    });
+  }
+
+  logoutUser() {
+    this.authService.logout();
   }
 
 }
