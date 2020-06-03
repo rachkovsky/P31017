@@ -27,8 +27,11 @@ const list = [{
 
 app.get('/api/blog-list', function(req, res){
     // request to db ...
-    res.json(list);
+    setTimeout(() => {
+        res.json(list);
+    },1500);
 });
+
 
 app.get('/api/blog-list/:id', function(req, res){
     let id = req.params.id;

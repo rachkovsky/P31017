@@ -12,6 +12,7 @@ import { RedDirective } from './directives/red.directive';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BlogListComponent } from './components/blog-list/blog-list.component';
 import { BlogItemComponent } from './components/blog-item/blog-item.component';
+import { PreloaderComponent } from './components/preloader/preloader.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BlogItemComponent } from './components/blog-item/blog-item.component';
     RedDirective,
     SidebarComponent,
     BlogListComponent,
-    BlogItemComponent
+    BlogItemComponent,
+    PreloaderComponent
   ],
   imports: [
     BrowserModule,

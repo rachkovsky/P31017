@@ -8,10 +8,11 @@
                 <div class="col col-3">
                     <app-sidebar></app-sidebar>
                 </div>
-                <div class="col col-9">
+                <main class="col col-9">
                     <router-outlet></router-outlet>
+                    <app-preloader></app-preloader>
                     <!-- <app-list [list]="frameworkList"></app-list> -->
-                </div>
+                </main>
             </div>
             
         </div>
@@ -20,6 +21,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 

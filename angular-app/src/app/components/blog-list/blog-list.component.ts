@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { DataSeviceService } from '../../services/data-sevice.service';
-import { BlogItem } from '../../interfaces/blog-item'
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { BlogItem } from '../../interfaces/blog-item';
+import { ActivatedRoute } from '@angular/router';
+import { PreloaderService } from '../../services/preloader/preloader.service';
 
 
 @Component({
@@ -8,17 +9,21 @@ import { BlogItem } from '../../interfaces/blog-item'
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.css']
 })
-export class BlogListComponent implements OnInit {
+export class BlogListComponent implements OnInit, OnDestroy {
 
-  constructor(private ds: DataSeviceService) { }
+  constructor(private router: ActivatedRoute, private preloader: PreloaderService) { }
 
   list: Array<BlogItem> = [];
 
   ngOnInit(): void {
-    this.ds.getBlogList().subscribe((response: Array<BlogItem>) => {
-      console.log(response);
-      this.list = response;
-    })
+    this.preloader.hide();
+    this.list = this.router.snapshot.data.list;    
   }
+
+  ngOnDestroy() {
+    
+  }
+
+
 
 }
